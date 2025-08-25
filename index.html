@@ -75,11 +75,11 @@
 
         button:hover { background-color: #0056b3; }
         
-        #showImageBtn {
+        #showTableBtn {
             background-color: #28a745;
             margin-top: 15px;
         }
-        #showImageBtn:hover { background-color: #218838; }
+        #showTableBtn:hover { background-color: #218838; }
 
 
         #fibonacci-helper {
@@ -264,14 +264,14 @@
                         <tr>
                             <td>قاعدة فيبوناتشي (Fibonacci Method) - تختار 4 أعداد متتالية من متتالية فيبوناتشي (مثل 1، 1، 2، 3)</td>
                             <td>f<sub>1</sub>.f<sub>4</sub></td>
-                            <td>2 f<sub>2</sub>.f<sub>3</sub></td>
+                            <td>2.f<sub>2</sub>.f<sub>3</sub></td>
                             <td>f<sub>2</sub><sup>2</sup>+f<sub>3</sub><sup>2</sup></td>
                         </tr>
                         <tr>
                             <td>قاعدة الأعداد الفردية - تختار أي عدد فردي أكبر من 1 (ليكن n).</td>
                             <td>n</td>
-                            <td>&frac12;(n<sup>2</sup>-1)</td>
-                            <td>&frac12;(n<sup>2</sup>+1)</td>
+                            <td><span dir="ltr">½(n<sup>2</sup>-1)</span></td>
+                            <td><span dir="ltr">½(n<sup>2</sup>+1)</span></td>
                         </tr>
                         <tr>
                             <td>قاعدة أخرى حيث n عدد صحيح أكبر من أو يساوي 1</td>
@@ -282,8 +282,8 @@
                         <tr>
                             <td>قاعدة الأعداد الزوجية - تختار أي عدد زوجي أكبر من 2 (ليكن n).</td>
                             <td>n</td>
-                            <td>&frac14;n<sup>2</sup>-1</td>
-                            <td>&frac14;n<sup>2</sup>+1</td>
+                            <td><span dir="ltr">¼n<sup>2</sup>-1</span></td>
+                            <td><span dir="ltr">¼n<sup>2</sup>+1</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -298,14 +298,13 @@
                 <span class="footer-text">إعداد / محمود عادل صالح - معلم رياضيات</span>
                 <a href="https://www.facebook.com/barghouthean" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://wa.me/+201552402912" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:mahmoudadelsaleh@gmail.com" target="_blank" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:mahmoudadelsaleh@gmail.com" target="_blank"aria-label="Gmail"><i class="fas fa-envelope"></i></a>
             </div>
         </marquee>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // ... (الكود الخاص بحسابات المثلث لم يتغير) ...
             const ruleSelector = document.getElementById('rule-selector');
             const inputsContainer = document.getElementById('inputs-container');
             const generateBtn = document.getElementById('generate-btn');
@@ -413,7 +412,6 @@
             const tableContainer = document.getElementById("tableContainer");
 
             showTableBtn.addEventListener('click', () => {
-                // التحقق من حالة العرض الحالية وتبديلها
                 if (tableContainer.style.display === "none" || tableContainer.style.display === "") {
                     tableContainer.style.display = "block";
                 } else {

@@ -70,7 +70,7 @@
             color: white;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color: 0.3s;
         }
 
         button:hover { background-color: #0056b3; }
@@ -102,7 +102,7 @@
             font-size: 0.8rem;
             border-radius: 15px;
             cursor: pointer;
-            transition: background-color 0.2s;
+            transition: background-color: 0.2s;
             background-color: #e9ecef;
         }
         .fib-number:hover { background-color: #007bff; color: white; }
@@ -178,6 +178,7 @@
             display: flex;
             align-items: center;
             gap: 25px;
+            padding: 0 25px; /* لإضافة مساحة في بداية ونهاية الشريط المتحرك */
             white-space: nowrap; 
         }
 
@@ -185,7 +186,7 @@
             color: #4a2c00;
             font-size: 24px;
             transition: transform 0.3s ease, color 0.3s ease;
-            display: inline-flex; /* لضمان محاذاة الصور والأيقونات بشكل جيد */
+            display: inline-flex;
             align-items: center;
         }
 
@@ -195,12 +196,6 @@
             font-size: 0.9rem;
             font-weight: bold;
             color: #4a2c00;
-        }
-        
-        /* كلاس جديد لتنسيق أيقونة انستا باي */
-        .instapay-icon {
-            height: 24px; /* لتوحيد حجمها مع باقي الأيقونات */
-            vertical-align: middle; /* لمحاذاة أفضل */
         }
 
         @keyframes gradientBG {
@@ -310,9 +305,10 @@
                 
                 <span class="footer-text">دعمكم يساعدنا على تطوير منتجاتنا</span>
                 <a href="https://ipn.eg/S/almas79070/instapay/4YnyMk" target="_blank" rel="noopener noreferrer" title="ادعمنا عبر انستا باي">
-                    <img src="https://www.eg-gate.com/images/instapay.png" alt="InstaPay" class="instapay-icon">
+                    <img src="instapay-icon.png" alt="InstaPay" style="height: 24px; vertical-align: middle;">
                 </a>
-                </div>
+
+            </div>
         </marquee>
     </footer>
 

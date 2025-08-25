@@ -123,11 +123,42 @@
 
         .hidden { display: none; }
         
-        /* === تنسيق حاوية الصورة الجديدة === */
-        #imageContainer {
-            margin-top: 15px;
+        /* === تنسيق حاوية الجدول === */
+        #tableContainer {
+            margin-top: 20px;
+            overflow-x: auto; /* للسماح بالتمرير الأفقي على الشاشات الصغيرة جدًا */
         }
         
+        /* === تنسيق الجدول الجديد === */
+        .rules-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .rules-table caption {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        .rules-table th, .rules-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .rules-table thead {
+            background-color: #007bff;
+            color: white;
+        }
+        .rules-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .rules-table td:first-child {
+            text-align: right;
+            font-weight: bold;
+        }
+
         /* === تنسيق الماركوي الذهبي الماسي === */
         .gold-diamond-footer {
             width: 100%;
@@ -210,10 +241,53 @@
                 <canvas id="triangle-canvas" width="300" height="200"></canvas>
                 <p id="triangle-result-text">الأبعاد ستظهر هنا...</p>
             </div>
-            <button id="showImageBtn">الإطلاع على قواعد التوليد</button>
+            <button id="showTableBtn">الإطلاع على قواعد التوليد</button>
             
-            <div id="imageContainer" style="display: none;">
-                <img src="rules.jpg" alt="قواعد توليد ثلاثيات فيثاغورس" style="max-width: 100%; height: auto; border-radius: 8px;">
+            <div id="tableContainer" style="display: none;">
+                <table class="rules-table">
+                    <caption>قواعد ثلاثيات فيثاغورث</caption>
+                    <thead>
+                        <tr>
+                            <th>القاعدة: اسمها وشرحها</th>
+                            <th>أحد ضلعي القائمة</th>
+                            <th>الضلع الآخر</th>
+                            <th>الوتر</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>قاعدة أويلر (Euclid's Formula) - تختار عددين صحيحين موجبين m و n (بشرط m > n)</td>
+                            <td>m<sup>2</sup>-n<sup>2</sup></td>
+                            <td>2mn</td>
+                            <td>m<sup>2</sup>+n<sup>2</sup></td>
+                        </tr>
+                        <tr>
+                            <td>قاعدة فيبوناتشي (Fibonacci Method) - تختار 4 أعداد متتالية من متتالية فيبوناتشي (مثل 1، 1، 2، 3)</td>
+                            <td>f<sub>1</sub>.f<sub>4</sub></td>
+                            <td>2 f<sub>2</sub>.f<sub>3</sub></td>
+                            <td>f<sub>2</sub><sup>2</sup>+f<sub>3</sub><sup>2</sup></td>
+                        </tr>
+                        <tr>
+                            <td>قاعدة الأعداد الفردية - تختار أي عدد فردي أكبر من 1 (ليكن n).</td>
+                            <td>n</td>
+                            <td>&frac12;(n<sup>2</sup>-1)</td>
+                            <td>&frac12;(n<sup>2</sup>+1)</td>
+                        </tr>
+                        <tr>
+                            <td>قاعدة أخرى حيث n عدد صحيح أكبر من أو يساوي 1</td>
+                            <td>2n+1</td>
+                            <td>2n(n+1)</td>
+                            <td>2n(n+1)+1</td>
+                        </tr>
+                        <tr>
+                            <td>قاعدة الأعداد الزوجية - تختار أي عدد زوجي أكبر من 2 (ليكن n).</td>
+                            <td>n</td>
+                            <td>&frac14;n<sup>2</sup>-1</td>
+                            <td>&frac14;n<sup>2</sup>+1</td>
+                        </tr>
+                    </tbody>
+                </table>
+                 <p style="font-size: 0.8rem; text-align: left; margin-top: 10px;">إعداد/محمود عادل صالح</p>
             </div>
         </div>
     </main>
@@ -334,16 +408,16 @@
             generateBtn.addEventListener('click', calculateTriangle);
             updateInputs();
 
-            // --- الكود الجديد للتحكم في ظهور وإخفاء الصورة ---
-            const showImageBtn = document.getElementById("showImageBtn");
-            const imageContainer = document.getElementById("imageContainer");
+            // --- الكود الجديد للتحكم في ظهور وإخفاء الجدول ---
+            const showTableBtn = document.getElementById("showTableBtn");
+            const tableContainer = document.getElementById("tableContainer");
 
-            showImageBtn.addEventListener('click', () => {
+            showTableBtn.addEventListener('click', () => {
                 // التحقق من حالة العرض الحالية وتبديلها
-                if (imageContainer.style.display === "none" || imageContainer.style.display === "") {
-                    imageContainer.style.display = "block";
+                if (tableContainer.style.display === "none" || tableContainer.style.display === "") {
+                    tableContainer.style.display = "block";
                 } else {
-                    imageContainer.style.display = "none";
+                    tableContainer.style.display = "none";
                 }
             });
         });

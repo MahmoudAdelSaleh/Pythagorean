@@ -12,9 +12,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f0f2f5;
             color: #333;
-            line-height: 1.5; /* تقليل المسافة بين السطور */
+            line-height: 1.5;
             margin: 0;
-            padding: 12px; /* تقليل الهامش العام */
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -28,22 +28,22 @@
         }
         
         header {
-            margin-bottom: 20px; /* تقليل المسافة */
-            padding-bottom: 8px; /* تقليل المسافة */
+            margin-bottom: 20px;
+            padding-bottom: 8px;
             border-bottom: 2px solid #007bff;
         }
 
         main {
             display: flex;
             flex-wrap: wrap;
-            gap: 18px; /* تقليل المسافة */
+            gap: 20px;
             justify-content: center;
             padding-bottom: 20px; 
         }
 
         .controls, .results {
             background: #fff;
-            padding: 18px; /* تقليل الحشو الداخلي */
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             width: 100%;
@@ -51,17 +51,17 @@
             box-sizing: border-box;
         }
 
-        h1 { font-size: 1.8rem; color: #0056b3; } /* تصغير الخط */
-        h2 { font-size: 1.2rem; color: #0056b3; margin-bottom: 10px;} /* تصغير الخط */
-        p { font-size: 0.9rem; } /* تصغير الخط */
+        h1 { font-size: 1.8rem; color: #0056b3; }
+        h2 { font-size: 1.2rem; color: #0056b3; margin-bottom: 10px;}
+        p { font-size: 0.9rem; }
 
         select, input, button {
             width: 100%;
-            padding: 10px; /* تقليل الحشو */
-            margin-top: 8px; /* تقليل المسافة */
+            padding: 10px;
+            margin-top: 8px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            font-size: 15px; /* تصغير الخط */
+            font-size: 15px;
             box-sizing: border-box;
         }
 
@@ -76,7 +76,7 @@
         button:hover { background-color: #0056b3; }
         
         #showImageBtn {
-            background-color: #28a745; /* لون مختلف للزر الجديد */
+            background-color: #28a745;
             margin-top: 15px;
         }
         #showImageBtn:hover { background-color: #218838; }
@@ -98,8 +98,8 @@
         }
 
         .fib-number {
-            padding: 4px 8px; /* تصغير */
-            font-size: 0.8rem; /* تصغير */
+            padding: 4px 8px;
+            font-size: 0.8rem;
             border-radius: 15px;
             cursor: pointer;
             transition: background-color 0.2s;
@@ -123,12 +123,17 @@
 
         .hidden { display: none; }
         
-        /* === تنسيق الماركوي الذهبي الماسي الجديد === */
+        /* === تنسيق حاوية الصورة الجديدة === */
+        #imageContainer {
+            margin-top: 15px;
+        }
+        
+        /* === تنسيق الماركوي الذهبي الماسي === */
         .gold-diamond-footer {
             width: 100%;
             max-width: 850px;
             margin-top: auto;
-            padding: 5px 0; /* تقليل الارتفاع بشكل كبير */
+            padding: 5px 0;
             background: linear-gradient(45deg, #FFD700, #F0E68C, #B8860B, #DAA520);
             background-size: 400% 400%;
             animation: gradientBG 10s ease infinite;
@@ -141,60 +146,23 @@
         .footer-content {
             display: flex;
             align-items: center;
-            gap: 25px; /* تقليل المسافة */
+            gap: 25px;
             white-space: nowrap; 
         }
         
         .footer-content a {
             color: #4a2c00;
-            font-size: 24px; /* تصغير الأيقونات */
+            font-size: 24px;
             transition: transform 0.3s ease, color 0.3s ease;
         }
 
         .footer-content a:hover { transform: scale(1.3); color: #000; }
 
         .footer-text {
-            font-size: 0.9rem; /* تصغير الخط */
+            font-size: 0.9rem;
             font-weight: bold;
             color: #4a2c00;
         }
-
-        /* === نافذة عرض الصورة (Modal) === */
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1000; 
-            left: 0;
-            top: 0;
-            width: 80%; 
-            height: 80%; 
-            overflow: auto; 
-            background-color: rgba(0,0,0,0.9);
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 90%;
-            max-width: 700px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        .close:hover, .close:focus { color: #bbb; }
-
 
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -243,6 +211,10 @@
                 <p id="triangle-result-text">الأبعاد ستظهر هنا...</p>
             </div>
             <button id="showImageBtn">الإطلاع على قواعد التوليد</button>
+            
+            <div id="imageContainer" style="display: none;">
+                <img src="rules.jpg" alt="قواعد توليد ثلاثيات فيثاغورس" style="max-width: 100%; height: auto; border-radius: 8px;">
+            </div>
         </div>
     </main>
 
@@ -251,20 +223,15 @@
             <div class="footer-content">
                 <span class="footer-text">إعداد / محمود عادل صالح - معلم رياضيات</span>
                 <a href="https://www.facebook.com/barghouthean" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://wa.me/+201552402913" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://wa.me/+201552402912" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 <a href="mailto:mahmoudadelsaleh@gmail.com" target="_blank" aria-label="Gmail"><i class="fas fa-envelope"></i></a>
             </div>
         </marquee>
     </footer>
 
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" src="rules.jpg">
-    </div>
-
     <script>
-        // ... (كود الجافاسكربت الخاص بك لم يتغير) ...
         document.addEventListener('DOMContentLoaded', () => {
+            // ... (الكود الخاص بحسابات المثلث لم يتغير) ...
             const ruleSelector = document.getElementById('rule-selector');
             const inputsContainer = document.getElementById('inputs-container');
             const generateBtn = document.getElementById('generate-btn');
@@ -367,18 +334,18 @@
             generateBtn.addEventListener('click', calculateTriangle);
             updateInputs();
 
-            // --- كود جديد لتشغيل نافذة عرض الصورة ---
-            const modal = document.getElementById("imageModal");
-            const btn = document.getElementById("showImageBtn");
-            const span = document.getElementsByClassName("close")[0];
+            // --- الكود الجديد للتحكم في ظهور وإخفاء الصورة ---
+            const showImageBtn = document.getElementById("showImageBtn");
+            const imageContainer = document.getElementById("imageContainer");
 
-            btn.onclick = function() { modal.style.display = "block"; }
-            span.onclick = function() { modal.style.display = "none"; }
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
+            showImageBtn.addEventListener('click', () => {
+                // التحقق من حالة العرض الحالية وتبديلها
+                if (imageContainer.style.display === "none" || imageContainer.style.display === "") {
+                    imageContainer.style.display = "block";
+                } else {
+                    imageContainer.style.display = "none";
                 }
-            }
+            });
         });
     </script>
 

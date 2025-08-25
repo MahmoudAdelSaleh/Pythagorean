@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مولد ثلاثيات فيثاغورس</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
+
     <style>
         /* === إعدادات أساسية للصفحة === */
         body {
@@ -26,7 +26,7 @@
             max-width: 850px;
             text-align: center;
         }
-        
+
         header {
             margin-bottom: 20px;
             padding-bottom: 8px;
@@ -74,7 +74,7 @@
         }
 
         button:hover { background-color: #0056b3; }
-        
+
         #showTableBtn {
             background-color: #28a745;
             margin-top: 15px;
@@ -122,13 +122,13 @@
         }
 
         .hidden { display: none; }
-        
+
         /* === تنسيق حاوية الجدول === */
         #tableContainer {
             margin-top: 20px;
             overflow-x: auto; /* للسماح بالتمرير الأفقي على الشاشات الصغيرة جدًا */
         }
-        
+
         /* === تنسيق الجدول الجديد === */
         .rules-table {
             width: 100%;
@@ -180,11 +180,13 @@
             gap: 25px;
             white-space: nowrap; 
         }
-        
+
         .footer-content a {
             color: #4a2c00;
             font-size: 24px;
             transition: transform 0.3s ease, color 0.3s ease;
+            display: inline-flex; /* لضمان محاذاة الصور والأيقونات بشكل جيد */
+            align-items: center;
         }
 
         .footer-content a:hover { transform: scale(1.3); color: #000; }
@@ -193,6 +195,12 @@
             font-size: 0.9rem;
             font-weight: bold;
             color: #4a2c00;
+        }
+        
+        /* كلاس جديد لتنسيق أيقونة انستا باي */
+        .instapay-icon {
+            height: 24px; /* لتوحيد حجمها مع باقي الأيقونات */
+            vertical-align: middle; /* لمحاذاة أفضل */
         }
 
         @keyframes gradientBG {
@@ -242,7 +250,7 @@
                 <p id="triangle-result-text">الأبعاد ستظهر هنا...</p>
             </div>
             <button id="showTableBtn">الإطلاع على قواعد التوليد</button>
-            
+
             <div id="tableContainer" style="display: none;">
                 <table class="rules-table">
                     <caption>قواعد ثلاثيات فيثاغورث</caption>
@@ -257,7 +265,7 @@
                     <tbody>
                         <tr>
                             <td>قاعدة أويلر (Euclid's Formula) - تختار عددين صحيحين موجبين m و n (بشرط m > n)</td>
-<td>m<sup>2</sup>-n<sup>2</sup></td>
+                            <td>m<sup>2</sup>-n<sup>2</sup></td>
                             <td>2mn</td>
                             <td>m<sup>2</sup>+n<sup>2</sup></td>
                         </tr>
@@ -299,7 +307,12 @@
                 <a href="https://www.facebook.com/barghouthean" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                 <a href="https://wa.me/+201552402912" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 <a href="mailto:mahmoudadelsaleh@gmail.com" target="_blank"aria-label="Gmail"><i class="fas fa-envelope"></i></a>
-            </div>
+                
+                <span class="footer-text">دعمكم يساعدنا على تطوير منتجاتنا</span>
+                <a href="https://ipn.eg/S/almas79070/instapay/4YnyMk" target="_blank" rel="noopener noreferrer" title="ادعمنا عبر انستا باي">
+                    <img src="https://www.eg-gate.com/images/instapay.png" alt="InstaPay" class="instapay-icon">
+                </a>
+                </div>
         </marquee>
     </footer>
 

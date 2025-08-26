@@ -178,7 +178,7 @@
             display: flex;
             align-items: center;
             gap: 25px;
-            padding: 0 25px; /* لإضافة مساحة في بداية ونهاية الشريط المتحرك */
+            padding: 0 25px; 
             white-space: nowrap; 
         }
 
@@ -197,6 +197,20 @@
             font-weight: bold;
             color: #4a2c00;
         }
+
+        /* ===== هذا هو الكود الجديد الذي تم إضافته ===== */
+        .fa-instapay::before {
+            content: ''; 
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            vertical-align: middle;
+            background-image: url('instapay-icon.png'); 
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* ============================================= */
 
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -304,11 +318,11 @@
                 <a href="mailto:mahmoudadelsaleh@gmail.com" target="_blank"aria-label="Gmail"><i class="fas fa-envelope"></i></a>
                 
                 <span class="footer-text">دعمكم يساعدنا على تطوير منتجاتنا</span>
-                <a href="https://ipn.eg/S/almas79070/instapay/4YnyMk" target="_blank" rel="noopener noreferrer" title="ادعمنا عبر انستا باي">
-                    <img src="instapay-icon.png" alt="InstaPay" style="height: 24px; vertical-align: middle;">
-                </a>
 
-            </div>
+                <a href="https://ipn.eg/S/almas79070/instapay/4YnyMk" target="_blank" rel="noopener noreferrer" title="ادعمنا عبر انستا باي">
+                    <i class="fa-instapay"></i>
+                </a>
+                </div>
         </marquee>
     </footer>
 
